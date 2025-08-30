@@ -14,7 +14,7 @@ const ItemCard = () => {
             <div className='main mt-20 px-6'>
                 <h2 className='text-2xl font-bold mb-4'>Shop All Products</h2>
                 <input type="text" placeholder='Search for Products' className='searchP w-[90%] mx-10 bg-yellow-100 text-black bg-ur rounded-lg my-4 p-2 shadow' />
-                <div className='grid gap-6 grid-cols-3 my-5 text-center'>
+                <div className='grid gap-6 lg:grid-cols-3 md:grid-col-2 sm:grid-cols-2 my-5 text-center'>
                     {items.map((i) => (
                         <div key={i.id} className='flex flex-col shadow-lg shadow-black w-60 p-3 rounded-md  justify-around  hover:shadow-2xl transition'>
                             <img src={i.image} alt="" width={150} className='w-full h-60 object-cover rounded-sm' />
