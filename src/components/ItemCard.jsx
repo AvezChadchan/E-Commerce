@@ -33,7 +33,7 @@ const ItemCard = ({ category, priceRange }) => {
                 <div className='grid gap-6 lg:grid-cols-3 md:grid-col-2 sm:grid-cols-2 my-5 text-center'>
                     {filteredItems.length > 0 ? filteredItems.map((i) => (
                         <NavLink key={i.id} to={`/product/${i.id}`}>
-                            <div className='flex flex-col shadow-lg shadow-black w-60 p-3 rounded-md  justify-around  hover:shadow-2xl transition'>
+                            <div className='flex flex-col shadow-lg shadow-black w-70 p-3 rounded-md  justify-around  hover:shadow-2xl transition'>
                                 <img src={i.image} alt={i.name} width={150} className='w-full h-60 object-cover rounded-sm' />
                                 <h2 className="mt-2 font-semibold">{i.name}</h2>
                                 <p className="text-gray-700">${i.price}</p>
