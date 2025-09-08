@@ -22,11 +22,11 @@ const Navbar = () => {
                     }> <li>Sale</li></NavLink>
                 </ul>
             </nav>
-            <div className='search w-100 flex gap-4 fixed top- right-10'><input type="text" className='searchM bg-yellow-100  w-[99%] rounded-md text-black ' placeholder='Search' />
+            <div className='search w-100 flex gap-4 fixed top-2 right-0 justify-end mx-10'>
                 <button><CiHeart size={28} /></button>
-                <NavLink to={'/cart'}  className={({isActive})=>
-                    isActive? "font-bold text-yellow-600 " : "hover:font-semibold"
-                    }><button className='' ><FaOpencart size={30} /></button></NavLink>
+                <NavLink to={'/cart'} className={({ isActive }) =>
+                    isActive ? "font-bold text-yellow-600 " : "hover:font-semibold"
+                }><button className='' ><FaOpencart size={30} /></button></NavLink>
             </div>
         </div>
     )

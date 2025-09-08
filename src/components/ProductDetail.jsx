@@ -4,7 +4,7 @@ import useItemStore from '../store/itemStore';
 
 const ProductDetail = () => {
     const { id } = useParams();
-    const { items, addtoCart } = useItemStore();
+    const { items, addToCart } = useItemStore();
     const product = items.find((p) => p.id.toString() === id);
     if (!product) {
         return <h2 className="text-center text-2xl mt-20">Product Not Found</h2>;
@@ -18,7 +18,7 @@ const ProductDetail = () => {
                     <p className='text-lg font-semibold'>Price: ${product.price}</p>
                     <p>{product.desc} || "No Description Available"</p>
                     <button onClick={() => {
-                        addtoCart(product);
+                        addToCart(product);
                         alert(`${product.name} is Added to Cart`)
                     }} className='mt-4 px-6 py-3 bg-yellow-400 text-white font-bold rounded-xl hover:bg-yellow-500'>Add to Cart</button>
                 </div>
