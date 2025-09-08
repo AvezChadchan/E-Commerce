@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCard from './ItemCard'
 
 const Home = () => {
+
+    const [category, setCategory] = useState("all");
+    const [priceRange, setPriceRange] = useState("all");
+
+    const [appliedFilter, setAppliedFilter] = useState({
+        category: "All Categories",
+        priceRange: "All Prices"
+    });
+
+    const handleAppliedFilter = () => {
+        setAppliedFilter({ category, priceRange });
+    }
+    
     return (
         <div className='flex'>
             <div className='h-full bg-white w-[30%] fixed top-14 left-0 p-4 shadow'>
@@ -10,7 +23,8 @@ const Home = () => {
                     <h3 className='block font-medium mb-2'>Category</h3>
                     <select
                         name="category"
-                        className="w-full border border-gray-300 rounded-md p-2">
+                        className="w-full border border-gray-300 rounded-md p-2"
+                        value={category} onChange={(e) => setCategory(e.target.value)}>
                         <option>All Categories</option>
                         <option>Clothing</option>
                         <option>Footwear</option>
@@ -23,7 +37,8 @@ const Home = () => {
                     <h3 className="block font-medium mb-2">Price Range</h3>
                     <select
                         name="price"
-                        className="w-full border border-gray-300 rounded-md p-2">
+                        className="w-full border border-gray-300 rounded-md p-2"
+                        value={priceRange} onChange={(e) => setPriceRange(e.target.value)}>
                         <option>All Prices</option>
                         <option>Under $50</option>
                         <option>$50 - $100</option>
@@ -31,36 +46,13 @@ const Home = () => {
                         <option>Above $500</option>
                     </select>
                 </div>
-                <div className="mb-4">
-                    <h3 className="block font-medium mb-1">Size</h3>
-                    <select
-                        name="size"
-                        className="w-full border border-gray-300 rounded-md p-2">
-                        <option>All Sizes</option>
-                        <option>Small</option>
-                        <option>Medium</option>
-                        <option>Large</option>
-                    </select>
-                </div>
-                <div className="mb-4">
-                    <h3 className="block font-medium mb-1">Color</h3>
-                    <select
-                        name="color"
-                        className="w-full border border-gray-300 rounded-md p-2">
-                        <option>All Colors</option>
-                        <option>Red</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Black</option>
-                    </select>
-                </div>
                 <button
-                    className="bg-yellow-300 font-medium px-4 py-2 rounded-full">
+                    className="bg-yellow-300 font-medium px-4 py-2 rounded-full" onClick={handleAppliedFilter}>
                     Apply Filters
                 </button>
             </div>
             <div className="ml-[30%] w-[70%]">
-                <ItemCard />
+                <ItemCard category={appliedFilter.category} priceRange={appliedFilter.priceRange} />
             </div>
         </div>
     )

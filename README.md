@@ -1,16 +1,18 @@
-# 🛒 React E-Commerce UI
+# 🛒 React E-Commerce Website
 
-A simple e-commerce frontend built with **React + Tailwind CSS + React Router**, featuring:
-- Sidebar filters (Category, Price, Size, Color)
-- Product cards with hover effects
-- Routing for multiple pages
+A fully functional e-commerce website built with **React** and **Tailwind CSS**. This project showcases a dynamic product catalog with filtering, search, and cart functionality.
 
----
+## Features
 
-## 🚀 Features
-- UI using **Tailwind CSS**
-- Sidebar filters with dropdowns
-- Product listing cards with hover shadows
-- Navigation using **React Router DOM**
-- Something in future is Coming.....
----
+- Browse all products with images, names, and prices.
+- Filter products by **category** and **price range**.
+- Search products by name.
+- Add products to the cart.
+<!-- - Responsive design for desktop and mobile. -->
+
+## Technologies Used
+
+- **Frontend:** React, Tailwind CSS
+- **State Management:** Zustand (useItemStore)
+- **Routing:** React Router
+- **Icons:** React Icons
